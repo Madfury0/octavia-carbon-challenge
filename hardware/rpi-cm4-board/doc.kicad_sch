@@ -1,0 +1,53 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "c9bfc53c-86b4-4bb8-b786-0ffe00f71a87")
+	(paper "A4")
+	(title_block
+		(title "Documentation")
+		(date "2026-03-19")
+		(comment 1 "Author: Kelvin Karani")
+	)
+	(lib_symbols)
+	(text_box "PCB LAYOUT AND ROUTING\nThe design includes a 4 layer board with the following stackup: Signal, Ground, Signal + Power, ground\nThis ensures all the traces have proper reference plane, L1 reference L2 and L3 reference L4.\nAll the grounds and 3.3V power are uncut planes thus ensure proper SI and reduces EMI from cuts.\n\nRS485 standard dictates A and B are differential pairs and should routed with 120 ohms differential impendance and ethernet standard dictates the differential pairs should be routed with 100 ohms differential impendance.\nBoth standards have been followed by using kicad's inbuilt calculator to get the required width and separation gap.\nMeadering has been used to achieved precise length matching on the different differential pairs as stipulated by the standard\n\nThe pcb layout has followed the recommended layout provided by the different datasheets.\nTracks have enough separation to minimize crosstalk and improve signal integrity\nThermal reliefs are used on the different copper pours.\n\nSoftaware test\nA python script will be used to test the different interfaces.\nThe program will ping the ethernent and check if host is up, hence verifying the ethernet\nSend a \"hello world\" over uart to a pc connected via a uart to ttl converter hence verify uart\nfor i2c, a simple loop that loops all the 7 bit address space and returns the address of  the device connected should work.\nfor spi, a sensor sending data over spi can be used to verify spi is cable of receiving data and also send data over to the sensor.\n\nSignal ringing on high speed lines might be an ensure but probing with an oscilloscope can be used to check \n"
+		(exclude_from_sim no)
+		(at 155.702 13.97 0)
+		(size 128.27 158.242)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left top)
+		)
+		(uuid "7e472322-2c15-4bef-b5cc-06bf72557b1c")
+	)
+	(text_box "HARDWARE DESIGN\n1. SINGLE PORT MAGJACK \nThe chosen rj45 has magnetics built in to reduce pcb footprint size\nIts a single port 10/100 rj45 capable of data transfer of upto 1Gps\n\n2. ISOW7741 Digital isolator IC\nISOW7741 digital isolator has both data isolation and power isolation to ensure complete isolationof the rs485 interface\nIt is being used to isolate the cm4 uart and the rs485 transceiver\n\n3. THVD1450DR RS485 transceiver IC\nThis is the rs485 transceiver ic that is used to provide the rs485 differential lines from the uart.\nIt has to enable pins that are tied to a gpio pin which will determine if it is sending or receiving data as it is implemented in half duplex mode\n\n4. Power supply\nAs one of the requirement was to be able to operate at 12 to 24VDC, R1500H LDO was picked as it provides a voltage input range of 4VDC to 24VDC with a minimum current supply of 0.5A thus meeting the requirement\nThe output voltage is a fixed 5V as required by the cm4 module\n\n5. SD Card\nThis provides a means to load the raspberry pi OS if the cm4 board in use does not have a eMMC\nIt is recommended in the cm4 datasheet \n\n6. Header \nThis is a 15 pin header pin provding access to uart, spi, i2c and the power pins - as this was one of the requirement of the challenge\n\n7. I2C pull up network\nAs the cm4 datasheet indicates that i2c 0 has internal pullup of 1.8K, the board provides a way to add pull up resistors(DNP) on the schematic if the user requires a different i2c speed\n\n8. RS485 termination resistors\nThe design provides 0K resistors at the A and B lines thus providing flexibility of adding different value termination resistors if need be.\n\n9. TVS diode has been used to provide overvoltage and surge protection"
+		(exclude_from_sim no)
+		(at 14.478 13.716 0)
+		(size 140.462 184.658)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left top)
+		)
+		(uuid "dde35553-675d-4daa-a16b-e82f409743b3")
+	)
+)

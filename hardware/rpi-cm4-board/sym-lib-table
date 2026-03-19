@@ -1,0 +1,10 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "DCJ200-10-A-K1-K")(type "KiCad")(uri "/home/madfury/tmp/octavia_carbon/hardware/libraries/DCJ200-10-A-K1-K/DCJ200-10-A-K1-K.kicad_sym")(options "")(descr ""))
+  (lib (name "CM4IO")(type "KiCad")(uri "/home/madfury/tmp/octavia_carbon/hardware/libraries/CM4IO/CM4IO.kicad_sym")(options "")(descr ""))
+  (lib (name "R1500H050B-T1-FE")(type "KiCad")(uri "/home/madfury/tmp/octavia_carbon/hardware/libraries/R1500H050B-T1-FE/R1500H050B-T1-FE.kicad_sym")(options "")(descr ""))
+  (lib (name "header_pin_1by15_female")(type "KiCad")(uri "/home/madfury/tmp/octavia_carbon/hardware/libraries/header_pin_1by15_female/header_pin_1by15_female.kicad_sym")(options "")(descr ""))
+  (lib (name "THVD1450DR")(type "KiCad")(uri "/home/madfury/tmp/octavia_carbon/hardware/libraries/THVD1450DR/THVD1450DR.kicad_sym")(options "")(descr ""))
+  (lib (name "ISO6521FDR")(type "KiCad")(uri "/home/madfury/tmp/octavia_carbon/hardware/libraries/ISO6521FDR/ISO6521FDR.kicad_sym")(options "")(descr ""))
+  (lib (name "ISO6731DWR")(type "KiCad")(uri "/home/madfury/tmp/octavia_carbon/hardware/libraries/ISO6731DWR/ISO6731DWR.kicad_sym")(options "")(descr ""))
+)
