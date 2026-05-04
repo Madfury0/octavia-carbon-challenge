@@ -16,7 +16,11 @@ Clones in the last 14 days: 19 clones, 10 unique cloners
 
 So a total of about >26 clones since the day I submitted the assignment.
 
-It was a fun project though, I did not rpi CM4 was a thing, now I am making custom a PC with it. Thank you.
+It was a fun project though, I did not rpi CM4 was a thing. I must get one.
+
+The unique cloners, hello old friend. I hope you like the project.
+
+Did you manage to fix all the DRC errors, if yes, can you create a pull request. I promise I will not pull a Torvald's on you.
 
 But please, can I get the rejection letter, the suspense is killing me.
 
